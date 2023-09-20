@@ -1,0 +1,2 @@
+const readUserService = () => {};
+export { readUserService };
