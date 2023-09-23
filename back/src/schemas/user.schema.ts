@@ -8,5 +8,6 @@ const userSchema = z.object({
 
 const userResponseSchema = userSchema.omit({ password: true });
 const userRequestSchema = userSchema.omit({ id: true });
+const updateUserSchema = userRequestSchema.partial();
 
-export { userResponseSchema, userRequestSchema, userSchema };
+export { userResponseSchema, userRequestSchema, userSchema, updateUserSchema };

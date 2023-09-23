@@ -5,9 +5,13 @@ import express, { Request, Response } from "express";
 import userRoutes from "./routes/user.route";
 import { User } from "./entities/user.entitie";
 import { loginRouter } from "./routes/login.route";
+import { handleAppError } from "./middlewares/handleError";
+import cors from "cors";
 
 const app = express();
 app.use(express.json());
+
+app.use(cors({ origin: "http://localhost:5173" }));
 
 app.use("/users", userRoutes);
 app.post("/pre-cadastrar-usuario", async (req: Request, res: Response) => {
@@ -29,5 +33,6 @@ app.post("/pre-cadastrar-usuario", async (req: Request, res: Response) => {
   }
 });
 app.use("/login", loginRouter);
+app.use(handleAppError);
 
 export default app;
