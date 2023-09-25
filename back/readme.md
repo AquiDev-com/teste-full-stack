@@ -9,41 +9,41 @@ Siga as etapas abaixo para configurar e testar o projeto em sua máquina:
    git clone [URL_do_repositório]
 
    ```
-
 2. **Navegue para a Pasta `back`:**
+3. Crie seu banco de dados local e em seguida configure seu .env no projeto seguindo o exemplo do arquivo .env.exemple
    Após clonar o repositório, navegue para a pasta `back` usando o comando:
 
    ```
    cd back
    ```
 
-3. **Instale as Dependências:**
+4. **Instale as Dependências:**
    Instale as dependências do projeto com o comando:
 
    ```
    npm install
    ```
 
-4. **Execute as Migrações:**
+5. **Execute as Migrações:**
    Execute as migrações do banco de dados usando o comando:
 
    ```
    npm run typeorm migration:run -- -d ./src/data-source
    ```
 
-5. **Inicie o Servidor:**
+6. **Inicie o Servidor:**
    Inicie o servidor com o seguinte comando:
    ```
    npm run dev
    ```
-6. **Cadastro de Usuário Pré-Programado:**
+7. **Cadastro de Usuário Pré-Programado:**
    Com o servidor em execução, abra um segundo terminal e execute o seguinte comando para cadastrar o usuário pré-programado:
 
    ```
    curl -X POST http://localhost:3000/pre-cadastrar-usuario
    ```
 
-7. **Efetue o Login com as Credenciais:**
+8. **Efetue o Login com as Credenciais:**
    Use as seguintes credenciais para efetuar o login do usuário pré-programado:
    ```
     - Email: devfullstack@gmail.com
