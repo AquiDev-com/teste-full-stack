@@ -1,7 +1,7 @@
 import { compare } from "bcryptjs";
 import { AppDataSource } from "../../data-source";
 import { AppError } from "../../errors";
-import { ILogin } from "../../interfaces/login.interface";
+import { ILogin, ILoginResponse } from "../../interfaces/login.interface";
 import jwt from "jsonwebtoken";
 import "dotenv/config";
 import { IUserRepo } from "../../interfaces/users.interface";
@@ -9,7 +9,7 @@ import { User } from "../../entities";
 
 export const createLoginService = async (
   loginData: ILogin
-): Promise<string> => {
+): Promise<ILoginResponse> => {
   const userRepository: IUserRepo = AppDataSource.getRepository(User);
 
   const user: User | null = await userRepository.findOneBy({
@@ -37,5 +37,10 @@ export const createLoginService = async (
     }
   );
 
-  return token;
+  const { id, name, email, phone, birthday, gender } = user;
+
+  return {
+    token,
+    user: { id, name, email, phone, birthday, gender },
+  };
 };
