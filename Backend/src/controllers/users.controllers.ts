@@ -25,7 +25,7 @@ export const retrieveUsersController = async (
   request: Request,
   response: Response
 ) => {
-  const userId: number = Number(request.params.userId);
+  const userId: string = request.user.id;
 
   const user = await retrieveUserService(userId);
 

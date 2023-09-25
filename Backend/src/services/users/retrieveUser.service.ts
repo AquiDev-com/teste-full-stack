@@ -5,13 +5,13 @@ import { IUserRepo, IUserReturn } from "../../interfaces/users.interface";
 import { returnUserSchema } from "../../schemas/users.schema";
 
 export const retrieveUserService = async (
-  userId: number
+  userId: string
 ): Promise<IUserReturn> => {
   const userRepository: IUserRepo = AppDataSource.getRepository(User);
 
   const findUser = await userRepository.findOne({
     where: {
-      id: userId,
+      id: parseInt(userId),
     },
   });
 

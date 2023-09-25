@@ -5,7 +5,7 @@ import "dotenv/config";
 
 export const ensureTokenIsValidMiddleware = async (
   request: Request,
-  response: Response,
+  _: Response,
   next: NextFunction
 ): Promise<void> => {
   let token = request.headers.authorization;
@@ -21,8 +21,9 @@ export const ensureTokenIsValidMiddleware = async (
       throw new AppError(error.message, 401);
     }
 
-    response.locals.user = decoded.sub;
-    response.locals.id = decoded.id;
+    request.user = {
+      id: decoded.sub,
+    };
 
     return next();
   });
