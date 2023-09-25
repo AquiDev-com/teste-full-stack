@@ -6,6 +6,7 @@ import { userSchema } from "../schemas/users.schema";
 import {
   createUserController,
   listUsersController,
+  retrieveUsersController,
 } from "../controllers/users.controllers";
 
 export const usersRoutes = Router();
@@ -19,3 +20,5 @@ usersRoutes.post(
 );
 
 usersRoutes.get("", listUsersController);
+
+usersRoutes.get("/:userId", retrieveUsersController);
