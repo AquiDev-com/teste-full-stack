@@ -17,16 +17,18 @@ export const AuthProvider = ({ children }) => {
     try {
       setLoading(true);
       const response = await api.post("/login", data);
-      localStorage.setItem("@TOKENCLIENT", response.data.token);
-      const { token, user: userReponse } = response.data;
-      setUser(userReponse);
+      localStorage.setItem("@TOKENUSER", response.data.token);
+      const { token, user } = response.data;
+
+      setUser(user);
+
       localStorage.setItem("@TOKEN", token);
       toast.success("Login successfully! 👏");
 
-      api.defaults.headers.common[
-        "Authorization"
-      ] = `Bearer ${response.data.token}`;
+      api.defaults.headers.common["Authorization"] = `Bearer ${token}`;
+
       getUser();
+
       setTimeout(() => {
         navigate("/dashboard");
       }, 3000);
