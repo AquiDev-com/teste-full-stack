@@ -11,12 +11,10 @@ Siga as etapas abaixo para configurar e testar o projeto em sua máquina:
    ```
 2. **Navegue para a Pasta `back`:**
 3. Após clonar o repositório, navegue para a pasta `back` usando o comando:
-4. Crie seu banco de dados local e em seguida configure seu .env no projeto seguindo o exemplo do arquivo .env.exemple
-
-   ```
+ ```
    cd back
    ```
-
+4. Crie seu banco de dados local e em seguida configure seu .env no projeto seguindo o exemplo do arquivo .env.exemple
 5. **Instale as Dependências:**
    Instale as dependências do projeto com o comando:
 
