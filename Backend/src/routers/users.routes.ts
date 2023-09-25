@@ -8,6 +8,7 @@ import {
   listUsersController,
   retrieveUsersController,
 } from "../controllers/users.controllers";
+import { ensureTokenIsValidMiddleware } from "../middlewares/ensureTokenIsValid.middleware";
 
 export const usersRoutes = Router();
 
@@ -21,4 +22,8 @@ usersRoutes.post(
 
 usersRoutes.get("", listUsersController);
 
-usersRoutes.get("/:userId", retrieveUsersController);
+usersRoutes.get(
+  "/:userId",
+  ensureTokenIsValidMiddleware,
+  retrieveUsersController
+);
