@@ -13,14 +13,13 @@ export const StyledDashboardPage = styled.div`
   .headerDashboard {
     margin-top: 1.8125rem;
     margin-bottom: 1.773125rem;
-    max-width: 90rem;
-    width: 90%;
-    height: 110px;
+    padding: 0 2.625rem;
+    width: 100%;
+    height: 6.875rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
     background-color: #000000;
-    padding-right: 1.313rem;
     border-radius: 0.25rem;
   }
 
@@ -38,8 +37,8 @@ export const StyledDashboardPage = styled.div`
   }
 
   .logo {
-    height: 150px;
-    width: 150px;
+    height: 9.375rem;
+    width: 9.375rem;
   }
 
   .btComeBackLogin:hover {
@@ -48,27 +47,116 @@ export const StyledDashboardPage = styled.div`
     color: #f8f9fa;
   }
 
+  .mainBeer {
+    background-color: #f0f0f0;
+    padding: 1.25rem;
+  }
+
+  .areaBeer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .cardBeer {
+    background-color: #fff;
+    border: 0.063rem solid #e03d23;
+    border-radius: 0.5rem;
+    margin: 0.625rem;
+    padding: 1.25rem;
+    text-align: center;
+    width: 15.625rem;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.1);
+    animation: cards 1.5s ease-in-out;
+  }
+
+  .nameBeer {
+    font-family: "Roboto", sans-serif;
+    font-size: 1rem;
+    margin-bottom: 0.625rem;
+  }
+
+  .sinceBeer {
+    font-family: "Roboto", sans-serif;
+    font-size: 0.813rem;
+    color: #888;
+    margin-bottom: 0.313rem;
+  }
+
+  .taglineBeer {
+    font-family: "Roboto", sans-serif;
+    font-size: 0.813rem;
+    margin-bottom: 0.313rem;
+  }
+
+  .alcoholBeer {
+    font-family: "Roboto", sans-serif;
+    font-size: 0.875rem;
+    color: #888;
+    margin-bottom: 0.625rem;
+  }
+
+  .imageBeer {
+    max-width: 100%;
+    height: 15.625rem;
+    border-radius: 0.25rem;
+  }
+
+  .pagination {
+    padding: 0.625rem 0rem 0.625rem 0rem;
+    display: flex;
+    gap: 0.938rem;
+  }
+
+  .btPagination {
+    margin-bottom: 0.625rem;
+    width: 5rem;
+    padding: 0.313rem;
+    border-radius: 0.313rem;
+    background: #000000;
+    font-family: "Roboto", sans-serif;
+    color: #ffffff;
+    font-size: 0.875rem;
+  }
+
+  .btPagination:hover {
+    background: #e03d23;
+  }
+
+  .btPagination.disabled {
+    background: #ccc;
+    cursor: not-allowed;
+  }
+
   @media (max-width: 43.75rem) {
-    .headerHome {
+    .headerDashboard {
       margin-top: 1.8125rem;
       margin-bottom: 1.773125rem;
-      max-width: 90rem;
-      width: 80%;
       display: flex;
       align-items: center;
       justify-content: space-between;
+      padding: 0.625rem 0.938rem;
     }
     .logo {
       max-width: 10.5956rem;
       width: 100%;
-      height: 2.91438rem;
     }
 
     .btComeBackLogin {
       max-width: 3.21812rem;
       width: 100%;
-      height: 1.50687rem;
       font-size: 0.75rem;
+    }
+  }
+
+  @keyframes cards {
+    from {
+      opacity: 0;
+      transform: translateX(-70%);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0%);
     }
   }
 `;

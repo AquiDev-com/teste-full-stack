@@ -9,7 +9,7 @@ export const GlobalStyle = createGlobalStyle`
 }
 
 ul, ol, li{
-    list-style-type: style none;
+    list-style: none;
 }
 
 a{
