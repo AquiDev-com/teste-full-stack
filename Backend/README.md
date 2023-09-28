@@ -302,43 +302,49 @@ Vazio
 
 ### Possíveis Erros:
 
-| Código do Erro | Descrição                      |
-| -------------- | ------------------------------ |
-| 404 Not Found  | "message": "Client not found!" |
+| Código do Erro | Descrição                    |
+| -------------- | ---------------------------- |
+| 404 Not Found  | "message": "User not found!" |
 
-### 4.1. **Listando Relatório de Contatos**
-
-[ Voltar aos Endpoints ](#5-endpoints)
-
-### `/listContacts/`
-
-### Exemplo de Request:
-
-```
-GET /listContacts/
-Host: http://localhost:3000
-Authorization: esta rota necessita do token do cliente  para acesso
-Content-type: application/json
-```
+### Criação de um usuário:
 
 ### Corpo da Requisição:
 
 ```json
-Vazio
+{
+  "name": "Alexander Miranda",
+  "email": "alexander@mail.com",
+  "cpf": "12325748758",
+  "phone": "2198516422325",
+  "birthday": "05/02/1997",
+  "image": null,
+  "gender": "male"
+}
 ```
 
 ### Exemplo de Response:
 
 ```
-200 OK
+201 CREATE
 ```
 
+```json
+{
+  "name": "Alexander Miranda",
+  "email": "alexander@mail.com",
+  "cpf": "12325748758",
+  "phone": "2198516422325",
+  "birthday": "05/02/1997",
+  "image": null,
+  "gender": "male",
+  "id": 5
+}
 ```
-pdf
-```
-
-![Customer Report](costumerReportPDF.png)
 
 ### Possíveis Erros:
 
-| 401 Unauthorized | You don`t have permissions or invalid token. |
+| Código do Erro | Descrição                         |
+| -------------- | --------------------------------- |
+| 409 Conflict   | "message": "Email already exists" |
+
+[ Voltar aos Endpoints ](#5-endpoints)
