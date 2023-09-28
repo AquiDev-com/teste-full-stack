@@ -39,6 +39,7 @@ export const StyledDashboardPage = styled.div`
   .logo {
     height: 9.375rem;
     width: 9.375rem;
+    border-radius: 50%;
   }
 
   .btComeBackLogin:hover {
@@ -138,8 +139,10 @@ export const StyledDashboardPage = styled.div`
       padding: 0.625rem 0.938rem;
     }
     .logo {
-      max-width: 10.5956rem;
-      width: 100%;
+      height: 7.375rem;
+      width: 4.375rem;
+      border-radius: 50%;
+      object-fit: cover;
     }
 
     .btComeBackLogin {

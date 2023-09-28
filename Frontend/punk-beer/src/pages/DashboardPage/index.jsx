@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { StyledDashboardPage } from "./style";
 import { apiPunk } from "../../services/axiosPunkUser";
 import { Footer } from "../../components/Footer";
+import { HeaderLogged } from "../../components/HeaderLogged";
 
 export const DashboardPage = () => {
   const { user, newLoading } = useContext(AuthContext);
@@ -36,8 +37,8 @@ export const DashboardPage = () => {
     getBeers();
   }, [currentPage, itemsPerPage]);
 
-  const paginate = () => {
-    setCurrentPage((prevPage) => prevPage + 1);
+  const paginate = (newPage) => {
+    setCurrentPage(newPage);
   };
 
   return (
@@ -46,13 +47,16 @@ export const DashboardPage = () => {
       {user && (
         <StyledDashboardPage>
           <header className="headerDashboard">
-            <img src={logo} alt="logo da Kenzie Hub" className="logo" />
+            <img src={logo} alt="logo da punk beer" className="logo" />
             <button className="btComeBackLogin" onClick={goLoginClick}>
               Go out
             </button>
           </header>
+
+          <HeaderLogged />
+
           <main className="mainBeer">
-            <ul className="areaBeer">
+            <ol className="areaBeer">
               {beer.map((element) => (
                 <li key={element.id} className="cardBeer">
                   <div>
@@ -71,7 +75,7 @@ export const DashboardPage = () => {
                   />
                 </li>
               ))}
-            </ul>
+            </ol>
           </main>
           <div className="pagination">
             <button
