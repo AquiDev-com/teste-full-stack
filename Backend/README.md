@@ -64,7 +64,7 @@ http://localhost:3000
 
 Diagrama DER da API definindo tabelas utilizadas e seus relacionamentos no banco de dados.
 
-![DER](costumers_contact.png)
+![DER](punkBeer.png)
 
 ---
 
