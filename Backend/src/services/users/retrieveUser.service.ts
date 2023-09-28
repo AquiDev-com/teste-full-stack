@@ -16,7 +16,7 @@ export const retrieveUserService = async (
   });
 
   if (!findUser) {
-    throw new AppError("User not found!", 400);
+    throw new AppError("User not found!", 404);
   }
 
   const user = returnUserSchema.parse(findUser!);

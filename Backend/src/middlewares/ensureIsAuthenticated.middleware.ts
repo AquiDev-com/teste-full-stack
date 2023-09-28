@@ -6,10 +6,10 @@ export const ensureIsAuthenticatedMiddleware = async (
   response: Response,
   next: NextFunction
 ) => {
-  const authenticatedUser = response.locals.user;
-  const userDataId = request.params.userId;
+  const authenticatedUser = request.user.id;
+  const userDataId = parseInt(request.params.userId);
 
-  if (authenticatedUser !== userDataId) {
+  if (parseInt(authenticatedUser) !== userDataId) {
     throw new AppError("Insufficient permission!", 403);
   }
 
