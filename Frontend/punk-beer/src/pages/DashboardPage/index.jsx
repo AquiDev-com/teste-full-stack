@@ -17,7 +17,8 @@ export const DashboardPage = () => {
   const goLoginClick = () => {
     navigate("/");
     localStorage.removeItem("@TOKEN");
-    localStorage.removeItem("@TOKENCLIENT");
+    localStorage.removeItem("@TOKENUSER");
+    localStorage.removeItem("@USER_ID");
   };
 
   useEffect(() => {

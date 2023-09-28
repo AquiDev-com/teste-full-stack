@@ -17,15 +17,18 @@ export const AuthProvider = ({ children }) => {
     try {
       setLoading(true);
       const response = await api.post("/login", data);
-      localStorage.setItem("@TOKENUSER", response.data.token);
-      const { token, user } = response.data;
+      localStorage.setItem("@TOKENUSER", response.data.token.token);
 
-      setUser(user);
+      setUser(response.data.token.user);
 
-      localStorage.setItem("@TOKEN", token);
+      localStorage.setItem("@TOKEN", response.data.token.token);
       toast.success("Login successfully! 👏");
 
-      api.defaults.headers.common["Authorization"] = `Bearer ${token}`;
+      api.defaults.headers.common[
+        "Authorization"
+      ] = `Bearer ${response.data.token.token}`;
+
+      localStorage.setItem("@USER_ID", response.data.token.user.id);
 
       getUser();
 
@@ -41,6 +44,7 @@ export const AuthProvider = ({ children }) => {
 
   const getUser = async () => {
     const tokenValidate = localStorage.getItem("@TOKEN");
+    const userId = localStorage.getItem("@USER_ID");
 
     if (!tokenValidate) {
       setNewLoading(false);
@@ -48,7 +52,7 @@ export const AuthProvider = ({ children }) => {
     }
     api.defaults.headers.common["Authorization"] = `Bearer ${tokenValidate}`;
     try {
-      const response = await api.get(`/users/${tokenValidate}`);
+      const response = await api.get(`/users/${userId}`);
 
       setUser(response.data);
     } catch (error) {
