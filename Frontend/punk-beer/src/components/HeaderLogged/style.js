@@ -13,8 +13,9 @@ export const StyledHeaderLogged = styled.div`
   .headerLogged {
     margin-top: 0.938rem;
     margin-bottom: 1.773125rem;
-    padding: 0 2.625rem 0 4.625rem;
+    max-width: 87.5rem;
     width: 100%;
+    padding: 0 2.625rem 0 4.625rem;
     height: 6.875rem;
     display: flex;
     align-items: center;

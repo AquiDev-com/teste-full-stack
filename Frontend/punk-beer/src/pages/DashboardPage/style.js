@@ -13,8 +13,9 @@ export const StyledDashboardPage = styled.div`
   .headerDashboard {
     margin-top: 1.8125rem;
     margin-bottom: 1.773125rem;
-    padding: 0 2.625rem;
+    max-width: 87.5rem;
     width: 100%;
+    padding: 0 2.625rem;
     height: 6.875rem;
     display: flex;
     align-items: center;
@@ -51,6 +52,8 @@ export const StyledDashboardPage = styled.div`
   .mainBeer {
     background-color: #f0f0f0;
     padding: 1.25rem;
+    max-width: 87.5rem;
+    width: 100%;
   }
 
   .areaBeer {
@@ -177,6 +180,20 @@ export const StyledDashboardPage = styled.div`
       max-width: 3.21812rem;
       width: 100%;
       font-size: 0.75rem;
+    }
+
+    .areaBeer {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      justify-content: flex-start;
+    }
+
+    .cardBeer {
+      flex: 0 0 auto;
+      width: 15.625rem;
+      margin: 0.625rem;
     }
   }
 
