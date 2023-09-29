@@ -15,8 +15,7 @@ O projeto representa uma aplicação onde um usuário pode visualizar um catálo
 
 - Register - onde o usuário pode fazer o seu cadastro;
 - Login - logar, gerando um token, para acesso ao seu perfil;
-- Dashboard- onde o usuário tem acesso ao catálogo das cervejas.
-- ViewMore - onde o usuário tem acesso as informações da cerveja escolhida.
+- Dashboard- onde o usuário tem acesso ao catálogo das cervejas. Também possui um botão de ver mais, aonde abre-se um modal contendo as informações da cerveja selecionada.
 
 <h2 font-family="pattaya">Requisitos técnicos:</h2><br>
 
