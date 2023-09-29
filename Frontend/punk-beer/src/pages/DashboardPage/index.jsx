@@ -6,12 +6,15 @@ import { StyledDashboardPage } from "./style";
 import { apiPunk } from "../../services/axiosPunkUser";
 import { Footer } from "../../components/Footer";
 import { HeaderLogged } from "../../components/HeaderLogged";
+import { BeerModal } from "../../components/BeerModal";
 
 export const DashboardPage = () => {
-  const { user, newLoading } = useContext(AuthContext);
+  const { user, newLoading, modalIsBeerOpen, handleBeerModal } =
+    useContext(AuthContext);
   const [beer, setBeer] = useState([]);
+
   const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 20;
+  const itemsPerPage = 10;
 
   const navigate = useNavigate();
 
@@ -66,6 +69,7 @@ export const DashboardPage = () => {
                     <h3 className="alcoholBeer">
                       Alcohol by Volume: {element.abv}%
                     </h3>
+                    <h3 className="ibuBeer">IBU: {element.ibu}%</h3>
                   </div>
 
                   <img
@@ -73,6 +77,15 @@ export const DashboardPage = () => {
                     className="imageBeer"
                     alt="beer image"
                   />
+
+                  <button
+                    onClick={() => {
+                      handleBeerModal(element.id);
+                    }}
+                    className="btViewMore"
+                  >
+                    view more
+                  </button>
                 </li>
               ))}
             </ol>
@@ -93,6 +106,7 @@ export const DashboardPage = () => {
             </button>
           </div>
           <Footer />
+          {modalIsBeerOpen && <BeerModal />}
         </StyledDashboardPage>
       )}
     </>

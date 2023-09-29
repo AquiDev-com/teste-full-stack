@@ -7,6 +7,7 @@ export const StyledLoading = styled.div`
     height: 1.313rem;
     width: 0.875rem;
     color: #ffffff;
+    object-fit: cover;
   }
 
   @keyframes giro {

@@ -10,6 +10,8 @@ export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(false);
   const [newLoading, setNewLoading] = useState(true);
+  const [modalIsBeerOpen, setIsBeerOpen] = useState(false);
+  const [selectedBeer, setSelectedBeer] = useState(null);
 
   const navigate = useNavigate();
 
@@ -81,6 +83,11 @@ export const AuthProvider = ({ children }) => {
     }
   };
 
+  const handleBeerModal = (beerId) => {
+    setSelectedBeer(beerId);
+    setIsBeerOpen(!modalIsBeerOpen);
+  };
+
   return (
     <AuthContext.Provider
       value={{
@@ -93,6 +100,11 @@ export const AuthProvider = ({ children }) => {
         setNewLoading,
         NewRegister,
         getUser,
+        modalIsBeerOpen,
+        setIsBeerOpen,
+        handleBeerModal,
+        selectedBeer,
+        setSelectedBeer,
       }}
     >
       {children}

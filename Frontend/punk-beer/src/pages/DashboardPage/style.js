@@ -67,6 +67,9 @@ export const StyledDashboardPage = styled.div`
     padding: 1.25rem;
     text-align: center;
     width: 15.625rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.1);
     animation: cards 1.5s ease-in-out;
   }
@@ -94,6 +97,13 @@ export const StyledDashboardPage = styled.div`
     font-family: "Roboto", sans-serif;
     font-size: 0.875rem;
     color: #888;
+    margin-bottom: 0.625rem;
+  }
+
+  .ibuBeer {
+    font-family: "Roboto", sans-serif;
+    font-size: 0.875rem;
+    color: #2e2e2e;
     margin-bottom: 0.625rem;
   }
 
@@ -127,6 +137,24 @@ export const StyledDashboardPage = styled.div`
   .btPagination.disabled {
     background: #ccc;
     cursor: not-allowed;
+  }
+
+  .btViewMore {
+    margin-top: 1.25rem;
+    margin-bottom: 0.625rem;
+    padding: 0.5rem;
+    border-radius: 1rem;
+    align-self: flex-end;
+    background: #000000;
+    font-family: "Roboto", sans-serif;
+    color: #ffffff;
+    font-size: 0.875rem;
+  }
+
+  .btViewMore:hover {
+    background: #e3d43d;
+    color: #000000;
+    font-weight: bold;
   }
 
   @media (max-width: 43.75rem) {
