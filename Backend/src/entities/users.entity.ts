@@ -28,9 +28,6 @@ export class User {
   @Column({ type: "varchar", length: 120 })
   password: string;
 
-  @Column({ type: "varchar", length: 11, unique: true })
-  cpf: string;
-
   @Column({ type: "varchar", length: 45 })
   phone: string;
 

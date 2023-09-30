@@ -37,10 +37,10 @@ export const createLoginService = async (
     }
   );
 
-  const { id, name, email, phone, birthday, gender } = user;
+  const { id, name, email, phone, birthday, image, gender } = user;
 
   return {
     token,
-    user: { id, name, email, phone, birthday, gender },
+    user: { id, name, email, phone, birthday, image, gender },
   };
 };
