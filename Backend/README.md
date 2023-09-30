@@ -240,7 +240,7 @@ Não possui body.
 ### Exemplo de Request:
 
 ```
-GET /users/:id
+GET /users/:userId
 Host: http://localhost:3000
 Authorization: esta rota necessita do token do usuário para acesso
 Content-type: application/json
@@ -265,6 +265,62 @@ Não possui body.
   "gender": "male",
   "id": 5
 }
+```
+
+### 1.4. **Atualizar Usuário por id**
+
+### Exemplo de Request:
+
+```
+PATCH /users/:userId
+Host: http://localhost:3000
+Authorization: esta rota necessita do token do usuário para acesso
+Content-type: application/json
+```
+
+### Corpo da Requisição:
+
+```json
+{
+  "image": "https://www.designi.com.br/images/preview/10837205.jpg"
+}
+```
+
+### Resposta da Requisição:
+
+```json
+{
+  "name": "Alexandra Miranda",
+  "email": "alexandra@mail.com",
+  "phone": "(21) 99652-4125",
+  "birthday": "1986-11-07",
+  "image": "https://www.designi.com.br/images/preview/10837205.jpg",
+  "gender": "female",
+  "id": 1
+}
+```
+
+### 1.5. **Deletar Usuário por id**
+
+### Exemplo de Request:
+
+```
+DELETE /users/:userId
+Host: http://localhost:3000
+Authorization: esta rota necessita do token do usuário para acesso
+Content-type: application/json
+```
+
+### Corpo da Requisição:
+
+```
+Não possui body
+```
+
+### Resposta da Requisição:
+
+```
+Retorna apenas o status 204.
 ```
 
 ### Exemplo de possíveis erros de request.
