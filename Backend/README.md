@@ -121,7 +121,6 @@ A tabela users é definida como:
 | name     | string | O nome do usuário.                                                       |
 | email    | string | O e-mail do usuário.                                                     |
 | password | string | A senha de acesso do usuário                                             |
-| cpf      | string | O cpf do usuário.                                                        |
 | phone    | string | O telefone do usuário                                                    |
 | birthday | string | A data de nascimento do usuário                                          |
 | image    | text   | A imagem do usuário                                                      |
