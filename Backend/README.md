@@ -322,39 +322,6 @@ Não possui body
 Retorna apenas o status 204.
 ```
 
-### Exemplo de possíveis erros de request.
-
-### Parâmetros da Requisição:
-
-| Parâmetro | Tipo   | Descrição                             |
-| --------- | ------ | ------------------------------------- |
-| id        | number | Identificador único do usuário (User) |
-
-### Corpo da Requisição:
-
-```json
-Vazio
-```
-
-### Exemplo de Response:
-
-```
-200 OK
-```
-
-```json
-{
-  "name": "Alexander Miranda",
-  "email": "alexander@mail.com",
-  "cpf": "12325748758",
-  "phone": "2198516422325",
-  "birthday": "05/02/1997",
-  "image": null,
-  "gender": "male",
-  "id": 5
-}
-```
-
 ### 2.1. **Login**
 
 [ Voltar para os Endpoints ](#5-endpoints)
@@ -395,6 +362,39 @@ Content-type: application/json
       "gender": "female"
     }
   }
+}
+```
+
+### Exemplo de possíveis erros de request.
+
+### Parâmetros da Requisição:
+
+| Parâmetro | Tipo   | Descrição                             |
+| --------- | ------ | ------------------------------------- |
+| id        | number | Identificador único do usuário (User) |
+
+### Corpo da Requisição:
+
+```json
+Vazio
+```
+
+### Exemplo de Response:
+
+```
+200 OK
+```
+
+```json
+{
+  "name": "Alexander Miranda",
+  "email": "alexander@mail.com",
+  "cpf": "12325748758",
+  "phone": "2198516422325",
+  "birthday": "05/02/1997",
+  "image": null,
+  "gender": "male",
+  "id": 5
 }
 ```
 
