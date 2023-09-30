@@ -355,6 +355,49 @@ Vazio
 }
 ```
 
+### 2.1. **Login**
+
+[ Voltar para os Endpoints ](#5-endpoints)
+
+### `/login`
+
+### Exemplo de Request:
+
+```
+POST /login
+Host: http://localhost:3000
+Authorization: None
+Content-type: application/json
+```
+
+### Corpo da Requisição:
+
+```json
+{
+  "email": "alexandra@mail.com",
+  "password": "Ale12345678"
+}
+```
+
+### Resposta da Requisição:
+
+```json
+{
+  "token": {
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFsZXhhbmRyYUBtYWlsLmNvbSIsImlhdCI6MTY5NjEwNjQ0NCwiZXhwIjoxNjk2MTkyODQ0LCJzdWIiOiIxIn0.Tjy4eYH93qKNMYjt_eWM0Q38r7NLfT3xPrqpTTTyVC0",
+    "user": {
+      "id": 1,
+      "name": "Alexandra Miranda",
+      "email": "alexandra@mail.com",
+      "phone": "(21) 99652-4125",
+      "birthday": "1986-11-07",
+      "image": "https://www.designi.com.br/images/preview/10837205.jpg",
+      "gender": "female"
+    }
+  }
+}
+```
+
 ### Possíveis Erros:
 
 | Código do Erro | Descrição                    |
