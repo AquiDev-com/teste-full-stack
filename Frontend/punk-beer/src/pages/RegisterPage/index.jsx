@@ -28,7 +28,6 @@ export const RegisterPage = () => {
       name: "",
       email: "",
       password: "",
-      cpf: "",
       phone: "",
       birthday: "",
       image: "",
@@ -94,16 +93,6 @@ export const RegisterPage = () => {
           {errors.password && (
             <p className="areaError">{errors.password.message}</p>
           )}
-          <label htmlFor="cpf" className="lbRegister">
-            CPF
-          </label>
-          <input
-            type="text"
-            placeholder="Enter your CPF here..."
-            className="iptRegister"
-            {...register("cpf")}
-          />
-          {errors?.cpf && <p className="areaError">{errors.cpf.message}</p>}
 
           <label htmlFor="phone" className="lbRegister">
             Phone

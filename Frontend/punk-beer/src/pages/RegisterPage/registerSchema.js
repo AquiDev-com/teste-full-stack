@@ -20,8 +20,6 @@ export const registerSchema = yup.object().shape({
     .matches(/(?=.*?[0-9])/, "At least one number is required.")
     .min(8, "A password of at least 8 characters is required"),
 
-  cpf: yup.string().required("CPF is mandatory"),
-
   phone: yup.string().required("Phone is mandatory"),
 
   birthday: yup.string().required("Birthday is mandatory"),
