@@ -64,7 +64,7 @@ export const StyledDashboardPage = styled.div`
 
   .cardBeer {
     background-color: #fff;
-    border: 0.063rem solid #e03d23;
+    border: 0.063rem solid #e3d43d;
     border-radius: 0.5rem;
     margin: 0.625rem;
     padding: 1.25rem;
@@ -75,6 +75,10 @@ export const StyledDashboardPage = styled.div`
     align-items: center;
     box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.1);
     animation: cards 1.5s ease-in-out;
+  }
+
+  .cardBeer:hover {
+    border: 0.094rem solid #e03d23;
   }
 
   .nameBeer {
@@ -155,6 +159,29 @@ export const StyledDashboardPage = styled.div`
   }
 
   .btViewMore:hover {
+    background: #e3d43d;
+    color: #000000;
+    font-weight: bold;
+  }
+
+  .areaBtFilter {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .btFilterDash {
+    margin-top: 1.25rem;
+    margin-bottom: 1.25rem;
+    padding: 0.5rem;
+    border-radius: 0.25rem;
+    background: #000000;
+    font-family: "Roboto", sans-serif;
+    color: #ffffff;
+    font-size: 0.875rem;
+  }
+
+  .btFilterDash:hover {
     background: #e3d43d;
     color: #000000;
     font-weight: bold;

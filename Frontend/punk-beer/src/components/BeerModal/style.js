@@ -20,7 +20,7 @@ export const StyledBeerModal = styled.div`
     background: #fdff83;
     animation: beer_modal 1.5s ease-in;
     transform: 1.5s ease-in;
-    border: 2.5px solid #000000;
+    border: 0.156rem solid #000000;
   }
   .headerModal {
     max-width: 39.0625rem;

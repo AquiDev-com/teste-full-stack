@@ -12,6 +12,8 @@ export const AuthProvider = ({ children }) => {
   const [newLoading, setNewLoading] = useState(true);
   const [modalIsBeerOpen, setIsBeerOpen] = useState(false);
   const [selectedBeer, setSelectedBeer] = useState(null);
+  const [filteredBeer, setFilteredBeer] = useState([]);
+  const [modalIsFilterOpen, setIsFilterOpen] = useState(false);
 
   const navigate = useNavigate();
 
@@ -20,17 +22,16 @@ export const AuthProvider = ({ children }) => {
       setLoading(true);
       const response = await api.post("/login", data);
       localStorage.setItem("@TOKENUSER", response.data.token.token);
+      const { token, user } = response.data.token;
 
-      setUser(response.data.token.user);
+      setUser(user);
 
-      localStorage.setItem("@TOKEN", response.data.token.token);
+      localStorage.setItem("@TOKEN", token);
       toast.success("Login successfully! 👏");
 
-      api.defaults.headers.common[
-        "Authorization"
-      ] = `Bearer ${response.data.token.token}`;
+      api.defaults.headers.common["Authorization"] = `Bearer ${token}`;
 
-      localStorage.setItem("@USER_ID", response.data.token.user.id);
+      localStorage.setItem("@USER_ID", user.id);
 
       getUser();
 
@@ -88,6 +89,10 @@ export const AuthProvider = ({ children }) => {
     setIsBeerOpen(!modalIsBeerOpen);
   };
 
+  const handleFilterModal = () => {
+    setIsFilterOpen(!modalIsFilterOpen);
+  };
+
   return (
     <AuthContext.Provider
       value={{
@@ -105,6 +110,11 @@ export const AuthProvider = ({ children }) => {
         handleBeerModal,
         selectedBeer,
         setSelectedBeer,
+        filteredBeer,
+        setFilteredBeer,
+        modalIsFilterOpen,
+        setIsFilterOpen,
+        handleFilterModal,
       }}
     >
       {children}
