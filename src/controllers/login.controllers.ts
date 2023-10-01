@@ -6,10 +6,11 @@ export const createLoginController = async (request: Request, response: Response
 
     const loginData: ILogin = request.body
 
-    const token = await createLoginService(loginData)
+    const { token, user } = await createLoginService(loginData)
 
     return response.json({
-        token: token
+        token: token,
+        user: user
     })
 
 }

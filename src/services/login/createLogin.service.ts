@@ -1,12 +1,12 @@
 import { compare } from "bcryptjs";
 import jwt from "jsonwebtoken";
 import { AppDataSource } from "../../data-source";
-import { ILogin } from "../../interfaces/login.interface";
+import { ILogin, LoginResponse } from "../../interfaces/login.interface";
 import { IUserRepo } from "../../interfaces/users.interfaces";
 import { User } from "../../entities";
 import { AppError } from "../../error";
 
-export const createLoginService = async (loginData: ILogin): Promise<string> => {
+export const createLoginService = async (loginData: ILogin): Promise<LoginResponse> => {
 
     const userRepository: IUserRepo = AppDataSource.getRepository(User)
 
@@ -35,5 +35,11 @@ export const createLoginService = async (loginData: ILogin): Promise<string> => 
         }
     )
 
-    return token
+    const { id, name, email, phone } = user;
+
+  return {
+    token,
+    user: { id, name, email, phone },
+  };
+
 }
