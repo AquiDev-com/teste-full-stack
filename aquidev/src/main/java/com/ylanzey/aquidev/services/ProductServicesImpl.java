@@ -9,7 +9,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
+import java.util.Optional;
 import java.util.UUID;
 
 @Service
@@ -25,9 +25,9 @@ public class ProductServicesImpl implements ProductServices {
 
 
     @Override
-    public Product findById(UUID id) {
-        return productRepository.findById(id)
-                .orElseThrow(() -> new ProductNotFoundException("Error in finding id"));
+    public Optional<Product> findById(UUID id) {
+
+        return productRepository.findById(id);
     }
 
     @Override
@@ -45,18 +45,20 @@ public class ProductServicesImpl implements ProductServices {
     @Override
     public Product update(UUID id, ProductDto productDto) {
         var productExisting = productRepository.findById(id)
-                .orElseThrow(() -> new ProductNotFoundException("Error in finding id"));
+                .orElseThrow(() -> new ProductNotFoundException("Error in find product"));
 
         productExisting.setDescription(productDto.getDescription());
         productExisting.setName(productDto.getName());
         productExisting.setPrice(productDto.getPrice());
         productExisting.setStock(productDto.getStock());
 
-        return productRepository.save(productExisting);
+       return productRepository.save(productExisting);
+
+
     }
 
     @Override
-    public void delete(UUID id) {
+    public void delete(UUID id){
         productRepository.deleteById(id);
     }
 }

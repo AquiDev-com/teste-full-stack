@@ -1,5 +1,6 @@
 package com.ylanzey.aquidev.controller;
 
+import com.ylanzey.aquidev.domain.entity.Product;
 import com.ylanzey.aquidev.dto.ProductDto;
 import com.ylanzey.aquidev.services.ProductServices;
 import jakarta.validation.Valid;
@@ -39,7 +40,12 @@ public class ProductController {
         var product = new com.ylanzey.aquidev.domain.entity.Product();
         BeanUtils.copyProperties(productDto, product);
 
-        return ResponseEntity.status(HttpStatus.OK).body(productServices.findById(id));
+        if (productServices.findById(id).isPresent()) {
+            return ResponseEntity.status(HttpStatus.OK).body(productServices.findById(id));
+        }
+
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+
     }
 
     @GetMapping
@@ -51,13 +57,23 @@ public class ProductController {
     public ResponseEntity<Object> updateProduct(@PathVariable("id") UUID id, @RequestBody @Valid ProductDto productDto) {
         var product = new com.ylanzey.aquidev.domain.entity.Product();
         BeanUtils.copyProperties(productDto, product);
-        return ResponseEntity.status(HttpStatus.CREATED).body(productServices.update(id, productDto));
+
+        if (productServices.findById(id).isPresent()) {
+            return ResponseEntity.status(HttpStatus.CREATED).body(productServices.update(id, productDto));
+        }
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
     }
 
     @DeleteMapping("{id}")
     public ResponseEntity<Object> deleteProduct(@PathVariable("id") UUID id) {
-        productServices.delete(id);
-        return ResponseEntity.status(HttpStatus.ACCEPTED).build();
+
+        if (productServices.findById(id).isPresent()) {
+            productServices.delete(id);
+            return ResponseEntity.status(HttpStatus.ACCEPTED).build();
+        }
+
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+
     }
 
 }
