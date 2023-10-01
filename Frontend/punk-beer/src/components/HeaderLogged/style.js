@@ -29,6 +29,7 @@ export const StyledHeaderLogged = styled.div`
     width: 4.375rem;
     border-radius: 50%;
     border: 0.25rem solid #e03d23;
+    object-fit: cover;
   }
 
   .areaUser {
