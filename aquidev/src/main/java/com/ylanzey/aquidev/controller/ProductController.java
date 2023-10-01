@@ -1,6 +1,5 @@
 package com.ylanzey.aquidev.controller;
 
-import com.ylanzey.aquidev.domain.entity.Product;
 import com.ylanzey.aquidev.dto.ProductDto;
 import com.ylanzey.aquidev.services.ProductServices;
 import jakarta.validation.Valid;
@@ -15,7 +14,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.UUID;
 
 @RestController
-@RequestMapping("/api/product")
+@RequestMapping("/api/products")
 public class ProductController {
 
     private final ProductServices productServices;
@@ -26,7 +25,7 @@ public class ProductController {
     }
 
     @PostMapping
-    public ResponseEntity<Object> createProduct(@RequestBody @Valid ProductDto productDto) {
+    public ResponseEntity<Object> createProducts(@RequestBody @Valid ProductDto productDto) {
 
         var product = new com.ylanzey.aquidev.domain.entity.Product();
         BeanUtils.copyProperties(productDto, product);
@@ -35,7 +34,7 @@ public class ProductController {
     }
 
     @GetMapping("{id}")
-    public ResponseEntity<Object> getProductById(@PathVariable("id") UUID id, ProductDto productDto) {
+    public ResponseEntity<Object> getProductsById(@PathVariable("id") UUID id, ProductDto productDto) {
 
         var product = new com.ylanzey.aquidev.domain.entity.Product();
         BeanUtils.copyProperties(productDto, product);
@@ -54,7 +53,7 @@ public class ProductController {
     }
 
     @PutMapping("{id}")
-    public ResponseEntity<Object> updateProduct(@PathVariable("id") UUID id, @RequestBody @Valid ProductDto productDto) {
+    public ResponseEntity<Object> updateProducts(@PathVariable("id") UUID id, @RequestBody @Valid ProductDto productDto) {
         var product = new com.ylanzey.aquidev.domain.entity.Product();
         BeanUtils.copyProperties(productDto, product);
 
@@ -65,7 +64,7 @@ public class ProductController {
     }
 
     @DeleteMapping("{id}")
-    public ResponseEntity<Object> deleteProduct(@PathVariable("id") UUID id) {
+    public ResponseEntity<Object> deleteProducts(@PathVariable("id") UUID id) {
 
         if (productServices.findById(id).isPresent()) {
             productServices.delete(id);
