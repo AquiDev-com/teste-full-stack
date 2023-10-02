@@ -1,7 +1,8 @@
 import React, {useState} from "react";
 import "./login.css";
 import {useForm} from "react-hook-form";
-import {isEmail} from "validator";
+import isEmail from "validator/lib/isEmail";
+
 
 type LoginOverlayProps = {
 	onClose: () => void;
