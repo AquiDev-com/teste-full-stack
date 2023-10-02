@@ -19,6 +19,7 @@ button {
 	cursor: pointer;
 	transition: border-color 0.25s;
 	color: #26577c;
+	box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 button:hover {
 	border-color: #e55604;
@@ -61,6 +62,7 @@ main {
 }
 img {
 	border-radius: 15px;
+	box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 p {
 	font-size: larger;
