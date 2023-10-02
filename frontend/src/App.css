@@ -3,6 +3,9 @@
 	padding: 0;
 	box-sizing: border-box;
 }
+.page {
+	max-width: 100%;
+}
 
 button {
 	border-radius: 8px;
@@ -14,7 +17,7 @@ button {
 	background-color: #ebe4d1;
 	cursor: pointer;
 	transition: border-color 0.25s;
-	color:#26577c
+	color: #26577c;
 }
 button:hover {
 	border-color: #e55604;
@@ -38,13 +41,21 @@ main {
 	flex-direction: column;
 }
 .card {
+	/* position: relative; */
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	align-items: center;
-	padding: 2em;
-	border: 2em;
-	gap: 2em;
+	padding: 1em;
+	margin-top: 10em;
+}
+
+.card-text {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	margin-right: 1em;
 }
 img {
 	border-radius: 15px;
@@ -52,8 +63,36 @@ img {
 p {
 	font-size: larger;
 	color: #26577c;
-	padding: 2em;
-	margin: 1em;
+	padding: 1.5em;
 	letter-spacing: 0.1em;
 	text-align: justify;
+}
+@media (max-width: 1200px) {
+	.card {
+		padding: 1em;
+		border: 1em;
+	}
+	.card-text {
+		margin-right: 0.5em;
+	}
+}
+@media (max-width: 968px) {
+	.card {
+		padding: 1em;
+		flex-direction: column;
+	}
+	.card-text {
+		margin-right: 1em;
+	}
+	img {
+		max-height: 300px;
+	}
+	p {
+		text-align: center;
+	}
+}
+@media (max-width: 550px) {
+	.card {
+		padding: 0;
+	}	
 }

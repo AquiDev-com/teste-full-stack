@@ -32,10 +32,7 @@ export default function LoginOverlay({ onClose }: LoginOverlayProps) {
     setSubscriptionVisible(true);
   };
 
-  const handleCloseSubscription = () => {
-    setSubscriptionVisible(false);
-    onClose();
-  };
+
 
   const {
     register,
@@ -75,15 +72,15 @@ export default function LoginOverlay({ onClose }: LoginOverlayProps) {
             onChange={handlePasswordChange}
           />
         </label>
-        <button className="submit" type="submit">
+        <button className="submit" onClick={() => handleSubmit(onSubmit)()}>
           Enviar
         </button>
       </form>
       <p>
         Não possui conta?{" "}
-        <a href="#" onClick={handleOpenSubscription}>
+        <button href="#" onClick={handleOpenSubscription}>
           Registrar-se
-        </a>
+        </button>
       </p>
     </div>
   );
@@ -132,7 +129,7 @@ export default function LoginOverlay({ onClose }: LoginOverlayProps) {
 						<input
 							className={errors?.password && "input-error"}
 							type="password"
-							placeholder="Senha"
+							placeholder="Sua senha"
 							{...register("password", {required: true, minLength: 8})}
 						/>
 
@@ -152,7 +149,7 @@ export default function LoginOverlay({ onClose }: LoginOverlayProps) {
 						<input
 							className={errors?.passwordConfirmation && "input-error"}
 							type="password"
-							placeholder="Repita sua senha"
+							placeholder="Digite sua senha novamente"
 							{...register("passwordConfirmation", {
 								required: true,
 								validate: (value) => value === watchPassword,

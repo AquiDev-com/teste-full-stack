@@ -6,8 +6,8 @@ import backGroundImage from "./assets/background.jpeg";
 function App() {
 
 	return (
-		<>
-			<NavBar/>
+		<div className="page">
+			<NavBar />
 			<main>
 				<div className="card">
 					<img src={backGroundImage} alt="imagem de cerveja" />
@@ -30,7 +30,7 @@ function App() {
 					</div>
 				</div>
 			</main>
-		</>
+		</div>
 	);
 }
 
