@@ -1,43 +1,60 @@
-O teste consiste em criar uma aplicação que expõe uma API REST de um CRUD de produtos e autenticação, e uma aplicação web contendo uma interface para login e acesso a dados de uma API externa. 
+# Divina Caneca Cervejaria
+## Tecnologias utilizadas
 
-Depois de logado, o usuário da aplicação web deve poder acessar os dados da [Punk API v2](https://punkapi.com/). 
+[![My Skills](https://skillicons.dev/icons?i=nestjs,js,typescript,nodejs,postman,express,prisma,postgres,git,github,react,vite,html,css,vscode)](https://skillicons.dev)
 
-NOTA: O front-end e back-end deve ser realizado apenas por desenvolvedores Full Stack. Caso contrário, realize o teste de acordo com sua área de atuação.
+## Descrição
 
-NOTA 2: Não esqueça de fazer o fork do repositório.
+### Backend
 
-## Back-end 💻
-- Todos os endpoints de consulta de dados devem ter autenticação por webtoken ou similar.
-- Deve existir validação dos dados recebidos pela API.
-- O CRUD não precisa de interface, apenas o login e o cadastro
 
-## Front-end 🎨
-O front-end deve atender aos seguintes requisitos:
-- Interface de login e cadastro com feedbacks para usuário ou senha incorreta.
-- Listagem dos dados da Punk API v2.
-- Responsividade.
 
-## Extras 🌟
-O desenvolvimento dessas features é opcional.
+Esta API foi construído com o framework [Nest](https://github.com/nestjs/nest). A escolha do framework foi baseada em no fato de que, entre outras coisas, ele é bem completo, possui arquitetura modular e organizada e permite a documentação automática da API com o Swagger.
 
-- Filtragem dos dados da Punk API v2 por diferentes critérios, como nome, estilo de cerveja, teor alcoólico, etc.
-- Ordenação dos dados da Punk API v2 por diferentes campos, como nome, teor alcoólico, etc.
-- Comentários e avaliações: permitir que os usuários deixem comentários e avaliações para as cervejas.
-- Dockerfile com todas as dependências.
+Neste projeto, o usuário pode se cadastrar, editar seus dados, realizar login, solicitar e-mail para recuperação de senha, recuperar senha através do token enviado para o email e criar um novo registro.
 
-## Critérios de avaliação ✅
-- Funcionamento do projeto.
-- Estrutura do código.
-- Uso de boas práticas.
-- Cumprimento dos requisitos mínimos.
+A autenticação da API foi construída utilizando [JWT](https://jwt.io/) e a definição das autorizações para o usuário foi feita utilizando o "Guard" do Nest.
 
-## Entrega 📦
+Além disso, o usuário pode consultar a API [Punk API v2](https://punkapi.com/) e filtrar os resultados por nome ou id. A integração com a API externa foi feita utilizando [Axios](https://axios-http.com/ptbr/).
 
-- Um repositório git (fork deste).
-- Um README do projeto com o passo-a-passo para executar a aplicação.
 
-## Observações 📝
+### Frontend
 
-1. Pode ser utilizado qualquer framework front-end, preprocessadores de css, task runners, bundlers, etc, de sua preferência, mas nenhum deles é de uso obrigatório.
 
-2. Não se deve fazer o commit de pastas como node_modules, o projeto deve instalar suas dependências a partir do package.json.
+
+Este projeto apresenta a página inicial da cervejaria `Divina Caneca`. Nela o usuário poderá fazer o login ou cadastro para acessar as cervejas disponíveis. A página inicial está responsiva permitindo que seja aberta tanto em dispositivos móveis como computador.
+
+O projeto foi desenvolvido com React utilizando [Typescript](https://www.typescriptlang.org/), [Vite](https://vitejs.dev/) e [React Hook Forms](https://react-hook-form.com/).
+
+
+## Instalação
+
+```bash
+$ npm install
+```
+
+## Rodando o app
+
+```bash
+# development
+
+$ npm run dev
+
+```
+Mais detalhes sobre a instalação estão disponíveis no README de cada um dos projetos.
+
+## TODO
+```
+1. Integração do frontend com o backend;
+2. Página das cervejas;
+3. Deploy da aplicação.
+
+```
+
+## Contato
+
+- Autora - [Daiane Bolzan](https://www.linkedin.com/in/daiane-deponti-bolzan/)
+
+## License
+
+[MIT licensed](LICENSE).

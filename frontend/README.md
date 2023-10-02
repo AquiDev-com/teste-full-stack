@@ -10,6 +10,11 @@ Este projeto apresenta a página inicial da cervejaria `Divina Caneca`. Nela o u
 
 O projeto foi desenvolvido com React utilizando [Typescript](https://www.typescriptlang.org/), [Vite](https://vitejs.dev/) e [React Hook Forms](https://react-hook-form.com/).
 
+
+## Tecnologias utilizadas
+
+[![My Skills](https://skillicons.dev/icons?i=react,vite,html,css,js,typescript,nodejs,git,github,vscode)](https://skillicons.dev)
+
 ## Instalação
 
 ```bash
@@ -38,9 +43,7 @@ O servidor irá iniciar em `http://localhost:5173/`.
 ```
 
 
-## Tecnologias utilizadas
 
-[![My Skills](https://skillicons.dev/icons?i=react,vite,html,css,js,typescript,nodejs,git,github,vscode)](https://skillicons.dev)
 
 ## Contato
 
