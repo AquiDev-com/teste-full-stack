@@ -5,7 +5,7 @@
 	top: 0;
 	right: 0;
 	width: 30%;
-	height: 70%;
+	height: fit-content;
 	display: block;
 	justify-content: center;
 	align-items: center;
@@ -15,23 +15,20 @@
 .container-login p,
 a {
 	color: #e55604;
+
 }
 .container-login p a {
 	text-decoration: none;
 	cursor: pointer;
 }
+.container-subscription p{
+	padding:0.6em;
+}
 .container-login h1,
 .container-subscription h1 {
 	font-size: 20px;
-}
-
-form {
-	display: flex;
-	align-items: center;
-	justify-content: flex-start;
-	flex-direction: column;
-	padding:  1em 1em 1em 0;
-	margin: 2em 0;
+	margin: 0;
+	padding: 0;
 }
 
 input {
@@ -42,16 +39,17 @@ input {
 	font-size: 1em;
 	font-weight: 500;
 	font-family: inherit;
-	cursor: pointer;
-	transition: border-color 0.25s;
+	height: 4em;
 }
 button .submit {
 	display: block;
+	width: 100%;
 	justify-content: center;
 	background-color: #e55604;
+	margin: 10px 0 10px 10px;
 }
 .container-subscription p {
-	color: #ebe4d1;
+	color:#e55604
 }
 .close {
 	display: flex;
@@ -60,21 +58,27 @@ button .submit {
 	margin-right: 30px;
 }
 
-.form-group {
+.form-group,
+form {
 	display: flex;
-	align-items: center;
-	justify-content: flex-start;
-	width: 100%;
+	justify-content: space-between;
+	flex-direction: column;
 	padding: 10px;
 }
+form {
+	flex-direction: column;
+}
 label {
-	justify-content: flex-start;
-	padding: 10px;
+	padding: 0 0 0 10px;
 	line-height: 3em;
+}
+.form-group input{
+	justify-content: flex-end;
 }
 
 .btn-submit {
 	justify-content: center;
+	padding-top: 1em;
 }
 
 .error-message {
@@ -82,7 +86,7 @@ label {
 	display: flex;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 950px) {
 	.container-login,
 	.container-subscription {
 		width: 100%;
