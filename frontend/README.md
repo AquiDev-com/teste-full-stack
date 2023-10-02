@@ -1,27 +1,44 @@
-# React + TypeScript + Vite
+<div style="display: flex; align-items: center; justify-content: center"><img src="https://techstack-generator.vercel.app/react-icon.svg" alt="React" width="65" height="65" />
+<img src="https://skillicons.dev/icons?i=vite"alt="Vite" width="65" height="65"/>
+</div>
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Divina Caneca Cervejaria
 
-Currently, two official plugins are available:
+## Descrição
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Este projeto apresenta a página inicial da cervejaria `Divina Caneca`. Nela o usuário poderá fazer o login ou cadastro para acessar as cervejas disponíveis. A página inicial está responsiva permitindo que seja aberta tanto em dispositivos móveis como computador.
 
-## Expanding the ESLint configuration
+O projeto foi desenvolvido com React utilizando [Typescript](https://www.typescriptlang.org/), [Vite](https://vitejs.dev/) e [React Hook Forms](https://react-hook-form.com/).
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Instalação
 
-- Configure the top-level `parserOptions` property like this:
-
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
+```bash
+$ npm install
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+## Rodando o app
+
+```bash
+
+# development
+$ npm run dev
+
+```
+## TODO
+```
+1. Integração com o backend;
+2. Página das cervejas.
+```
+
+
+## Tecnologias utilizadas
+
+[![My Skills](https://skillicons.dev/icons?i=react,vite,html,css,js,typescript,nodejs,git,github,vscode)](https://skillicons.dev)
+
+## Contato
+
+- Autora - [Daiane Bolzan](https://www.linkedin.com/in/daiane-deponti-bolzan/)
+
+## License
+
+[MIT licensed](LICENSE).
