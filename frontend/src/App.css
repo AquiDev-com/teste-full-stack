@@ -1,0 +1,58 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+button {
+	border-radius: 8px;
+	border: 1px solid transparent;
+	padding: 0.6em 1.2em;
+	font-size: 1em;
+	font-weight: 500;
+	font-family: inherit;
+	background-color: #ebe4d1;
+	cursor: pointer;
+	transition: border-color 0.25s;
+}
+button:hover {
+	border-color: #e55604;
+}
+button:focus,
+button:focus-visible {
+	outline: 4px auto -webkit-focus-ring-color;
+}
+h1 {
+	font-size: 3.5em;
+	line-height: 1.1;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 1em;
+}
+main {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+}
+.card {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	align-items: center;
+	padding: 2em;
+	border: 2em;
+	gap: 2em;
+}
+img {
+	border-radius: 15px;
+}
+p {
+	font-size: larger;
+	color: #26577c;
+	padding: 2em;
+	margin: 1em;
+	letter-spacing: 0.1em;
+	text-align: justify;
+}
