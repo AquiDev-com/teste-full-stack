@@ -9,7 +9,7 @@
 
 
 
-Esta API foi construído com o framework [Nest](https://github.com/nestjs/nest). A escolha do framework foi baseada em no fato de que, entre outras coisas, ele é bem completo, possui arquitetura modular e organizada e permite a documentação automática da API com o Swagger.
+Esta API foi construído com o framework [Nestjs](https://github.com/nestjs/nest). A escolha do framework foi baseada em no fato de que, entre outras coisas, ele é bem completo, possui arquitetura modular e organizada e permite a documentação automática da API com o Swagger.
 
 Neste projeto, o usuário pode se cadastrar, editar seus dados, realizar login, solicitar e-mail para recuperação de senha, recuperar senha através do token enviado para o email e criar um novo registro.
 
@@ -29,11 +29,21 @@ O projeto foi desenvolvido com React utilizando [Typescript](https://www.typescr
 
 ## Instalação
 
+Faça o clone do arquivo `https://github.com/Daaaiii/teste-AquiDev.git`;
+
+Para acessar o submodulo do backend, utilize o comando:
+```
+git submodule update --init --recursive
+
+```
+Abra o projeto no VSCode e instale as dependências:
+
 ```bash
 $ npm install
 ```
 
-## Rodando o app
+
+### Rodando o app
 
 ```bash
 # development
