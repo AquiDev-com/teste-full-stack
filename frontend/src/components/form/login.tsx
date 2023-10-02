@@ -27,7 +27,7 @@ export default function LoginOverlay({onClose}: LoginOverlayProps) {
 
 	const watchPassword = watch("password");
 
-	const onSubmit = (data: any) => {
+	const onSubmit = (data: unknown) => {
 		alert(JSON.stringify(data)); //TODO: conectar com backend
 	};
 
@@ -166,8 +166,8 @@ export default function LoginOverlay({onClose}: LoginOverlayProps) {
 			<div className="form-group">
 				<div className="checkbox-group">
 					<input
-						type="checkbox"
-						name="privacy-policy"
+						type="checkbox"				
+						about="privacy-policy"
 						{...register("privacyTerms", {
 							validate: (value) => value === true,
 						})}
