@@ -2,7 +2,6 @@ import "./App.css";
 import "./index.css";
 import NavBar from "./components/nav-bar/nav-bar";
 import backGroundImage from "./assets/background.jpeg";
-import Login from "./components/form/login";
 
 function App() {
 
@@ -31,7 +30,6 @@ function App() {
 					</div>
 				</div>
 			</main>
-			<Login/>
 		</>
 	);
 }
