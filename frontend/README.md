@@ -24,6 +24,13 @@ $ npm install
 $ npm run dev
 
 ```
+O servidor irá iniciar em `http://localhost:5173/`.
+
+## Resultado
+![Alt text](src/assets/pagina_inicial.gif)
+
+
+
 ## TODO
 ```
 1. Integração com o backend;
