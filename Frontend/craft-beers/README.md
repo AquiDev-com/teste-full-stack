@@ -43,5 +43,7 @@ Este projeto consiste em uma aplicação onde é possível se cadastrar, se loga
 <li font-family="robotto" font-size="16px">yup</li>
 </ul><br>
 
+<h2 font-family="pattaya">Link do Deploy via Vercel</h2><br>
+<a href="https://craft-beers.vercel.app/" font-family="robotto" font-size="16px">Craft Beers</a>
 
 
