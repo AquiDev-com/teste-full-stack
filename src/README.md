@@ -59,6 +59,13 @@ http://localhost:3000
 ## 2. Diagrama ER
 [ Voltar para o topo ](#tabela-de-conteúdos)
 
+
+Diagrama ER da API definindo bem as relações entre as tabelas do banco de dados.
+
+![DER](craft_beers.drawio.png)
+
+---
+
 ## 3. Início Rápido
 [ Voltar para o topo ](#tabela-de-conteúdos)
 
