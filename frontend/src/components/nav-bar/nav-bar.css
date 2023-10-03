@@ -1,0 +1,62 @@
+.nav {
+	display: flex;
+	position: fixed;
+	align-items: center;
+	justify-content: space-between;
+	background-color: #26577c;
+	max-width: 100%;
+	width: 100%;
+	height: 6em;
+	padding: 2em;
+	box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+nav h1 {
+	color: #e55604;
+	text-shadow: 2px 2px 5px #1a1c21;
+	font-family: "Anton", sans-serif;
+}
+
+.logo {
+	height: 5rem;
+	padding: 1.5em;
+}
+.logo:hover {
+	filter: drop-shadow(0 0 2em #e55604);
+}
+.login {
+	width: 7em;
+	border-radius: 8px;
+	border: 1px solid transparent;
+	padding: 0.6em 1.2em;
+	margin: 20px;
+	font-size: 1em;
+	font-weight: 500;
+	font-family: inherit;
+	cursor: pointer;
+	transition: border-color 0.25s;
+}
+.login:hover {
+	border-color: #e55604;
+}
+.login:focus,
+.login:focus-visible {
+	outline: 4px auto -webkit-focus-ring-color;
+}
+
+@media (max-width: 800px) {
+	.nav {
+		padding: 0;
+		margin: 0;
+	}
+	.nav h1 {
+		font-size: 2.7em;
+	}
+}
+@media (max-width: 425px) {
+	.nav {
+		height: 6em;
+	}
+	.nav h1 {
+		font-size: 1.5em;
+	}
+}
