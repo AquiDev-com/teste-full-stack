@@ -128,11 +128,13 @@ A tabela users é definida como:
 
 ### Endpoints
 
-| Método | Rota       | Descrição                                      |
-| ------ | ---------- | ---------------------------------------------- |
-| POST   | /users     | Criação de um usuário.                         |
-| GET    | /users     | Lista todos os usuários.                       |
-| GET    | /users/:id | Lista um usuário, usando seu ID como parâmetro |
+| Método | Rota       | Descrição                                                     |
+| ------ | ---------- | ------------------------------------------------------------- |
+| POST   | /users     | Criação de um usuário.                                        |
+| GET    | /users     | Lista todos os usuários.                                      |
+| GET    | /users/:userId | Lista um usuário, usando seu ID como parâmetro                |
+| PATCH  | /users/::userId| Atualiza os dados de um usuário, usando seu ID como parâmetro |
+| DELETE | /users/::userId | Deleta um usuário, usando seu ID como parâmetro               |
 
 ---
 
